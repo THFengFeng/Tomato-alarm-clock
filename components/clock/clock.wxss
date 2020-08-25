@@ -6,15 +6,15 @@
 }
 .clock text{
     color: #fff;
-    font-size: 26px;
+    font-size: 17px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 .clock image {
-    width: 320px;
-    height: 320px;
+    width: 180px;
+    height: 180px;
 
 }
 .active{
