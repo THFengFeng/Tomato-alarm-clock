@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/binding/binding",
+    "pages/login/login",
     "pages/me/me",
-    "pages/tomato/tomato",
     "pages/home/home",
+    "pages/tomato/tomato",
     "pages/test/test"
   ],
   "window": {
@@ -36,6 +38,5 @@
         "selectedIconPath": "images/me-active.png"
       }
     ]
-  },
-  "sitemapLocation": "sitemap55.json"
+  }
 }
