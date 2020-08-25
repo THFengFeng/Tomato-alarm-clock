@@ -1,9 +1,9 @@
 {
-  "pages": [
-    "pages/binding/binding",
-    "pages/login/login",
-    "pages/me/me",
+  "pages":[
     "pages/home/home",
+    "pages/login/login",
+    "pages/binding/binding",
+    "pages/me/me",
     "pages/tomato/tomato",
     "pages/test/test"
   ],
@@ -25,12 +25,7 @@
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-active.png"
       },
-      {
-        "pagePath": "pages/home/home",
-        "text": "数据统计",
-        "iconPath": "images/total.png",
-        "selectedIconPath": "images/total-active.png"
-      },
+
       {
         "pagePath": "pages/me/me",
         "text": "我的",
