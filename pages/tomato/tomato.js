@@ -1,4 +1,6 @@
 // pages/tomato/tomato.js
+const {http} = require('../../lib/http.js');
+
 Page({
     timer: null,
     data: {
@@ -7,10 +9,14 @@ Page({
         timerStatus: 'stop',
         confirmVisible: false,
         againButtonVisible: false,
-        finishConfirmVisible: false
+        finishConfirmVisible: false,
+        tomato: {}
     },
     onShow: function () {
         this.startTimer()
+        http.post('/tomatoes').then(response => {
+            this.setData({tomato: response.data.resource})
+        })
     },
     startTimer(){
         this.setData({ timerStatus: 'start' })
@@ -49,30 +55,42 @@ Page({
         }
         this.setData({ time: `${m}:${s}` })
     },
-    confirmAbandon(event){
+    confirmAbandon(event) {
         let content = event.detail
-        wx.navigateBack({
-            to: -1
+        http.put(`/tomatoes/${this.data.tomato.id}`, {
+            description: content,
+            aborted: true
         })
+            .then(response => {
+                wx.navigateBack({to: -1})
+            })
     },
-    confirmFinish(event){
+    confirmFinish(event) {
         let content = event.detail
     },
-    confirmCancel(){
-        this.setData({ finishConfirmVisible: false })
+    confirmCancel() {
+        this.setData({finishConfirmVisible: false})
     },
-    showConfirm(){
-        this.setData({ confirmVisible: true })
+    showConfirm() {
+        this.setData({confirmVisible: true})
         this.clearTimer()
     },
-    hideConfirm(){
-        this.setData({ confirmVisible: false })
+    hideConfirm() {
+        this.setData({confirmVisible: false})
         this.startTimer()
     },
-    onHide: function () {
-
+    onHide() {
+        this.clearTimer()
+        http.put(`/tomatoes/${this.data.tomato.id}`, {
+            description: "退出放弃",
+            aborted: true
+        })
     },
-    onUnload: function () {
-
+    onUnload() {
+        this.clearTimer()
+        http.put(`/tomatoes/${this.data.tomato.id}`, {
+            description: "退出放弃",
+            aborted: true
+        })
     },
 })

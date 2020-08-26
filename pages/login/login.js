@@ -1,5 +1,6 @@
 const {http} = require('../../lib/http.js')
 const {app_id, app_secret} = getApp().globalData
+
 Page({
     data: {},
     //点击按钮 => 调用小程序原生的 wx.login => 参数 => http.post => 返回 user
@@ -31,5 +32,4 @@ Page({
         wx.setStorageSync('me', response.data.resource)
         wx.setStorageSync('X-token', response.header["X-token"])
     }
-
 })

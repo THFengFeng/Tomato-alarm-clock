@@ -26,18 +26,18 @@ Page({
   },
   onLoad: function (options) {
     function fn(str) {
-      let minutes = Math.floor(str / 60);
-      let seconds = Math.floor(str % 60);
-      if (seconds === 0) {
-        seconds = "00"
-      }
-      if ((seconds + "").length === 1) {
-        seconds = "0" + seconds
-      }
-      if ((minutes + "").length === 1) {
-        minutes = "0" + minutes
-      }
-      console.log(`${minutes}:${seconds}`)
+        let minutes = Math.floor(str / 60)
+        let seconds = Math.floor(str % 60)
+        if (seconds === 0) {
+            seconds = "00"
+        }
+        if ((seconds + "").length === 1) {
+            seconds = "0" + seconds
+        }
+        if ((minutes + "").length === 1) {
+            minutes = "0" + minutes
+        }
+        console.log(`${minutes}:${seconds}`)
     }
   },
   changeColoe(){

@@ -20,7 +20,7 @@
 <view>{{str}}</view>
 <button bindtap="reverseStr">我是一个按钮</button>
         ---------------------------
-<view wx:key="{{arr}}">
+<view wx:for="{{arr}}">
     {{index}}，{{item}}
 </view>
 <button bindtap="pushItem">我是一个按钮</button>

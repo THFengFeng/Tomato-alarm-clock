@@ -1,4 +1,4 @@
-    Component({
+Component({
     properties: {
         size: {
             type: String,
@@ -8,9 +8,9 @@
             type: String,
             value: "default"
         },
-        text:{
+        text: {
             type: String,
             value: ''
         }
     }
-}) 
+})

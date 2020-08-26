@@ -6,7 +6,6 @@
     height: 100vh;
     background: #EEF7F6;
 }
-
 .login .avatar {
     width: 250rpx;
     height: 250rpx;
@@ -16,7 +15,6 @@
     margin-bottom: 20rpx;
     margin-top: 283rpx;
 }
-
 .login .name-wrap {
     color: #F6705A;
     font-size: 38rpx;
@@ -26,7 +24,6 @@
     margin-bottom: 60rpx;
     width: 100%;
 }
-
 .login .name-wrap::after {
     content: "";
     position: absolute;

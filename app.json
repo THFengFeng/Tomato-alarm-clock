@@ -1,8 +1,8 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
-    "pages/login/login",
     "pages/binding/binding",
+    "pages/login/login",
     "pages/me/me",
     "pages/tomato/tomato",
     "pages/test/test"
@@ -25,7 +25,6 @@
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-active.png"
       },
-
       {
         "pagePath": "pages/me/me",
         "text": "我的",
@@ -33,5 +32,6 @@
         "selectedIconPath": "images/me-active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

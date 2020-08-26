@@ -1,29 +1,37 @@
 Component({
     properties: {
-        placeholder:{
+        placeholder: {
             type: String,
             value: ""
         },
         visible: {
             type: Boolean,
             value: false
+        },
+        value: {
+            type: String,
+            value: ""
         }
-
-        },
-        data:{
+    },
+    data: {
         value: ""
-        },
-    methods:{
-        confirm(){
+    },
+    lifetimes: {
+        attached() {
+            if (this.properties.value) {
+                this.properties.value = this.data.value
+            }
+        }
+    },
+    methods: {
+        confirm() {
             this.triggerEvent('confirm', this.data.value)
-
         },
-        cancel(){
+        cancel() {
             this.triggerEvent('cancel', this.data.value)
-               },
-        watchValue(){
+        },
+        watchValue(event) {
             this.data.value = event.detail.value
         }
-
     }
 })
